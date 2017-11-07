@@ -3,11 +3,6 @@ const router = express.Router();
 
 const User = require('../models/user');
 
-/* GET admin. */
-router.get('/admin', (req, res, next) => {
-  res.send('respond with a resource');
-});
-
 /* POST authenticate */
 router.post('/admin/auth', async (req, res, next) => {
   const username = req.body.username;
