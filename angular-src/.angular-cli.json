@@ -19,7 +19,10 @@
       "testTsconfig": "tsconfig.spec.json",
       "prefix": "app",
       "styles": [
-        "styles.css"
+        "styles.css",
+        "themes/indigo-theme.scss",
+        "themes/theme.scss"
+          
       ],
       "scripts": [],
       "environmentSource": "environments/environment.ts",

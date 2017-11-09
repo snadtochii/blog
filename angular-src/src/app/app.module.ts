@@ -1,3 +1,4 @@
+import { OverlayContainer } from '@angular/cdk/overlay';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
@@ -27,7 +28,7 @@ import { MdModule } from './shared/md.module';
     BrowserAnimationsModule,
     MdModule
   ],
-  providers: [],
+  providers: [OverlayContainer],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
