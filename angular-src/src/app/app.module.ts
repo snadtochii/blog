@@ -1,8 +1,9 @@
-import { OverlayContainer } from '@angular/cdk/overlay';
+import { SharedModule } from './shared/shared.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
@@ -12,6 +13,7 @@ import { PostListComponent } from './post-list/post-list.component';
 import { PostComponent } from './post/post.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { MdModule } from './shared/md.module';
+import { ThemingService } from './shared/services/theming.service';
 
 @NgModule({
   declarations: [
@@ -26,9 +28,11 @@ import { MdModule } from './shared/md.module';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MdModule
+    FormsModule,
+    MdModule,
+    SharedModule
   ],
-  providers: [OverlayContainer],
+  providers: [ThemingService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

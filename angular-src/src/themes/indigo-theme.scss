@@ -11,8 +11,6 @@ $indigo-theme: mat-light-theme(
     $my-theme-warn
 );
 
-.indigo-theme {
-    @include angular-material-theme($indigo-theme);
-  }
+@include angular-material-theme($indigo-theme);
 
   

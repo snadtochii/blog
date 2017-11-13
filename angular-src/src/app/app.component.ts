@@ -1,5 +1,5 @@
 import { Component, ViewChild, ElementRef } from '@angular/core';
-import { OverlayContainer } from '@angular/cdk/overlay';
+import { ThemingService } from './shared/services/theming.service';
 
 @Component({
   selector: 'app-root',
@@ -7,10 +7,16 @@ import { OverlayContainer } from '@angular/cdk/overlay';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  themeClass
 
-  constructor(private elRef: ElementRef) {
-    this.elRef.nativeElement.className = 'indigo-theme';
+  constructor(private elRef: ElementRef,
+    private themingService: ThemingService) {
+
+    this.themingService.theme$.subscribe(theme => {
+      if (theme) {
+        this.elRef.nativeElement.className = theme.class;
+      }
+    });
+    
   }
 }
 

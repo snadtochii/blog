@@ -7,3 +7,9 @@
     <input matInput placeholder="Password">
   </mat-form-field>
 </div>
+<mat-form-field>
+  <mat-select [(ngModel)]="selectedTheme" (selectionChange)="changeTheme()">
+    <mat-option>None</mat-option>
+    <mat-option *ngFor="let theme of themes" [value]="theme">{{theme.name}}</mat-option>
+  </mat-select>
+</mat-form-field>
