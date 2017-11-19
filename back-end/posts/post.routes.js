@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 
-const Post = require('../models/post');
+const Post = require('./post.model');
 
 /* GET all posts preview. */
 router.get('/', async (req, res, next) => {

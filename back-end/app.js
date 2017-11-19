@@ -11,8 +11,8 @@ const mongoose = require('mongoose');
 
 const config = require('./configs/database');
 
-const posts = require('./routes/posts');
-const users = require('./routes/users');
+const posts = require('./posts/post.routes');
+const users = require('./users/user.routes');
 
 mongoose.connect(config.database, { useMongoClient: true });
 let db = mongoose.connection;

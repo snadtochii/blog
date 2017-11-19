@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 
-const User = require('../models/user');
+const User = require('./user.model');
 
 /* POST authenticate */
 router.post('/admin/auth', async (req, res, next) => {
