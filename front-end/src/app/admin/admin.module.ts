@@ -13,12 +13,8 @@ import { AuthService } from '../shared/services/auth';
   imports: [
     CommonModule,
     AdminRoutingModule,
-<<<<<<< HEAD:front-end/src/app/admin/admin.module.ts
     // FormsModule,
     SharedModule,
-=======
-    FormsModule,    
->>>>>>> 534ff1011e4c1ba5e394e46d83a8d5683e5dd275:angular-src/src/app/admin/admin.module.ts
     MdModule
   ],
   declarations: [LoginComponent, CreatePostComponent, AddCategoryComponent],

@@ -10,7 +10,6 @@ const themes = [
   { name: 'Indigo', class: 'indigo-theme' }
 ]
 
-<<<<<<< HEAD:front-end/src/environments/environment.ts
 const urls = {
   login: 'http://localhost:3000/admin/auth/'
 }
@@ -18,10 +17,5 @@ export const environment = {
   production: false,
   themes: themes,
   urls: urls
-=======
-export const environment = {
-  production: false,
-  themes: themes
->>>>>>> 534ff1011e4c1ba5e394e46d83a8d5683e5dd275:angular-src/src/environments/environment.ts
 };
 
