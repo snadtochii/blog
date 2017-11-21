@@ -11,7 +11,7 @@ const themes = [
 ]
 
 const urls = {
-  login: 'http://localhost:3000/admin/auth/'
+  login: 'http://localhost:3000/users/auth'
 }
 export const environment = {
   production: false,

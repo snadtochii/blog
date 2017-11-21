@@ -9,6 +9,15 @@ export class AuthService {
 
   private authUrl = environment.urls.login;
 
+  private _isLoggedIn = false;
+  
+  public get isLoggedIn() {
+    return this._isLoggedIn;
+  }
+  public set isLoggedIn(loggedIn) {
+    this._isLoggedIn = loggedIn;
+  }
+
   constructor(private http: HttpClient) { }
 
   login(credentials: Credentials): Observable<any> {

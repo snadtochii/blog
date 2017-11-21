@@ -1,4 +1,4 @@
 export class Credentials {
-    constructor(public email,
+    constructor(public username,
                 public password) { }
 }

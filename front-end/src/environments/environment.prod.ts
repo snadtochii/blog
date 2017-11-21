@@ -5,7 +5,12 @@ const themes = [
   { name: 'Indigo', class: 'indigo-theme' }
 ]
 
+const urls = {
+  login: '/admin/auth/'
+}
+
 export const environment = {
   production: true,
-  themes: themes
+  themes: themes,
+  urls: urls
 };

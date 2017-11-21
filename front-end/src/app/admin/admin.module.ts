@@ -8,6 +8,7 @@ import { AdminRoutingModule } from './admin-routing.module';
 import { MdModule } from '../shared/md.module';
 import { SharedModule } from '../shared/shared.module';
 import { AuthService } from '../shared/services/auth';
+import { AuthGuard } from '../shared/guards/auth.guard';
 
 @NgModule({
   imports: [
@@ -18,6 +19,6 @@ import { AuthService } from '../shared/services/auth';
     MdModule
   ],
   declarations: [LoginComponent, CreatePostComponent, AddCategoryComponent],
-  providers: [AuthService]
+  providers: [AuthService, AuthGuard]
 })
 export class AdminModule { }

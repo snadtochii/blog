@@ -15,6 +15,10 @@ const userSchema = mongoose.Schema({
 
 const User = module.exports = mongoose.model('User', userSchema);
 
+module.exports.addUser = async (newUser) => {
+    return await newUser.save();
+}
+
 module.exports.getUserByUsername = async (username) => {
     const query = { username: username };
     try {
@@ -25,7 +29,7 @@ module.exports.getUserByUsername = async (username) => {
 };
 
 module.exports.comparePassword = (password, candidate) => {
-    if (password == candidate) {
+    if (password === candidate) {
         return true;
     } else {
         return false;
