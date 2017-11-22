@@ -6,7 +6,7 @@ const themes = [
 ]
 
 const urls = {
-  login: '/admin/auth/'
+  login: '/users/auth/'
 }
 
 export const environment = {

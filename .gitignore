@@ -5,6 +5,7 @@
 /tmp
 /out-tsc
 /public
+/back-end/public
 
 # dependencies
 /back-end/node_modules/
@@ -42,3 +43,5 @@ testem.log
 # System Files
 .DS_Store
 Thumbs.db
+
+/back-end/Procfile
