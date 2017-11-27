@@ -16,7 +16,7 @@ export class LoginComponent implements OnInit, OnDestroy {
   user: Credentials;
 
   constructor(private authService: AuthService,
-              private router: Router) { }
+    private router: Router) { }
 
   ngOnInit() {
   }
@@ -28,7 +28,7 @@ export class LoginComponent implements OnInit, OnDestroy {
 
   login(formValue) {
     this.user = new Credentials(formValue.username, formValue.password);
-    
+
     this.authService.login(this.user).takeUntil(this.unsubscribe).subscribe(res => {
       if (res.success) {
         this.authService.isLoggedIn = true;

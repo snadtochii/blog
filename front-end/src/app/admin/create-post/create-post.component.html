@@ -1,3 +1,18 @@
-<p>
-  create-post works!
-</p>
+<mat-card>
+  <form [formGroup]="postForm">
+    <mat-form-field color="primary">
+      <input matInput placeholder="Введіть заголовок" formControlName="title">
+    </mat-form-field>
+
+    <mat-form-field color="primary">
+      <mat-select placeholder="Виберіть категорію">
+        <mat-option value="option">Option</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <a class="link" (click)="openDialog()">Додати категорію</a>
+
+    <mat-form-field color="primary">
+      <textarea matInput placeholder="Текст новини" formControlName="body"></textarea>
+    </mat-form-field>
+  </form>
+</mat-card>

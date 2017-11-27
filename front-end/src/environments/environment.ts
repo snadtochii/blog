@@ -11,7 +11,7 @@ const themes = [
 ]
 
 const urls = {
-  login: 'http://localhost:3000/users/auth'
+  login: 'https://aqueous-lowlands-70672.herokuapp.com/users/auth'
 }
 export const environment = {
   production: false,

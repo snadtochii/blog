@@ -23,7 +23,8 @@ import { ThemingService } from './shared/services/common';
     FooterComponent,
     PostListComponent,
     PostComponent,
-    SidebarComponent
+    SidebarComponent,
+    
   ],
   imports: [
     BrowserModule,

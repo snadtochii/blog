@@ -16,7 +16,6 @@ export class AppComponent {
         this.elRef.nativeElement.className = theme.class;
       }
     });
-    
   }
 }
 

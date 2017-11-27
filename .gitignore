@@ -45,3 +45,4 @@ testem.log
 Thumbs.db
 
 /back-end/Procfile
+/back-end/configs/database.js

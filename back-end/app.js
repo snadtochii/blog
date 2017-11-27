@@ -13,6 +13,7 @@ const config = require('./configs/database');
 
 const posts = require('./posts/post.routes');
 const users = require('./users/user.routes');
+const categories = require('./categories/category.routes');
 
 mongoose.connect(config.database, { useMongoClient: true });
 let db = mongoose.connection;
@@ -45,6 +46,7 @@ app.use(cors());
 
 app.use('/posts', posts);
 app.use('/users', users);
+app.use('/categories', categories);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
