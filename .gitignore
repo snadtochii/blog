@@ -5,6 +5,7 @@
 /tmp
 /out-tsc
 /public
+/back-end/public
 
 # dependencies
 /back-end/node_modules/
@@ -42,3 +43,11 @@ testem.log
 # System Files
 .DS_Store
 Thumbs.db
+
+back-end/Procfile
+back-end/configs/config.js
+back-end/configs/guards.js
+front-end/src/app/auth/auth.config.ts
+front-end/src/app/core/env.config.ts
+back-end/config/config.js
+back-end/config/guards.js

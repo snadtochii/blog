@@ -2,3 +2,10 @@
 body, html {
     margin: 0;
 }
+
+.link {
+    cursor: pointer;
+}
+.link:hover {
+    text-decoration: underline;    
+}

@@ -1,6 +1,6 @@
-import { AuthService } from './../../shared/services/auth';
+import { AuthService } from './../../core/services/auth';
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { ThemingService } from './../../shared/services/common';
+import { ThemingService } from './../../core/services/common';
 import { Credentials } from '../../shared/models';
 import { ReplaySubject } from 'rxjs/ReplaySubject';
 import { Router } from '@angular/router';
@@ -16,7 +16,7 @@ export class LoginComponent implements OnInit, OnDestroy {
   user: Credentials;
 
   constructor(private authService: AuthService,
-              private router: Router) { }
+    private router: Router) { }
 
   ngOnInit() {
   }
@@ -26,16 +26,7 @@ export class LoginComponent implements OnInit, OnDestroy {
     this.unsubscribe.complete();
   }
 
-  login(formValue) {
-    this.user = new Credentials(formValue.username, formValue.password);
-    
-    this.authService.login(this.user).takeUntil(this.unsubscribe).subscribe(res => {
-      if (res.success) {
-        this.authService.isLoggedIn = true;
-        this.router.navigate(['/admin/create-post/']);
-      } else {
-        console.log(res);
-      }
-    });
+  login() {
+    this.authService.login();
   }
 }

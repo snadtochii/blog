@@ -1,0 +1,14 @@
+<div class="dialog-header-container">
+  <p class="dialog-header">{{data.name}}</p>  
+</div>
+<form>
+  <mat-form-field class="full-width">
+    <input matInput placeholder="Назва категорії" name="category" [(ngModel)]="newCategory">
+  </mat-form-field>
+  
+  <mat-form-field class="full-width">
+    <textarea matInput placeholder="Textarea"></textarea>
+  </mat-form-field>
+
+  <button mat-button>Додати категорію</button>
+</form>

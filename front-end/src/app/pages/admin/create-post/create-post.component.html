@@ -5,8 +5,8 @@
     </mat-form-field>
 
     <mat-form-field color="primary">
-      <mat-select placeholder="Виберіть категорію">
-        <mat-option value="option">Option</mat-option>
+      <mat-select placeholder="Виберіть категорію" formControlName="category">
+        <mat-option *ngFor="let category of categories" [value]="category">{{category.name}}</mat-option>
       </mat-select>
     </mat-form-field>
     <a class="link" (click)="openDialog()">Додати категорію</a>

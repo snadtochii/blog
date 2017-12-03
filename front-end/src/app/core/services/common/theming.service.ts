@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
-import { environment } from '../../../../environments/environment'
-import { BehaviorSubject, Observable } from 'rxjs/Rx';
-import { ThemeModel } from '../../models';
+import { environment } from '../../../../environments/environment';
+import { BehaviorSubject } from 'rxjs/BehaviorSubject';
+import { Observable } from 'rxjs/Rx';
+import { ThemeModel } from '../../../shared/models';
 
 @Injectable()
 export class ThemingService {

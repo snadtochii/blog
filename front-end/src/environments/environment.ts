@@ -8,14 +8,20 @@ const themes = [
   { name: 'Indigo-Pink', class: 'indigo-pink-theme' },
   { name: 'Indigo-Pink-Dark', class: 'indigo-pink-dark-theme' },
   { name: 'Indigo', class: 'indigo-theme' }
-]
+];
 
 const urls = {
-  login: 'http://localhost:3000/users/auth'
-}
+  auth: {
+    login: 'https://aqueous-lowlands-70672.herokuapp.com/api/v0/users/auth',
+  },
+  posts: {
+    categories: 'https://aqueous-lowlands-70672.herokuapp.com/api/v0/categories'
+  }
+};
+
 export const environment = {
   production: false,
   themes: themes,
-  urls: urls
+  api: urls
 };
 

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ThemingService } from '../shared/services/common';
+import { ThemingService } from '../core/services/common';
 
 @Component({
   selector: 'app-header',

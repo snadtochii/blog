@@ -10,31 +10,35 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
-import { PostListComponent } from './post-list/post-list.component';
-import { PostComponent } from './post/post.component';
+import { PostListComponent } from './pages/post-list/post-list.component';
+import { PostComponent } from './pages/post/post.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { MdModule } from './shared/md.module';
-import { ThemingService } from './shared/services/common';
+import { CoreModule } from './core/core.module';
+import { LoginComponent } from './pages/login/login.component';
+import { CallbackComponent } from './pages/callback/callback.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     FooterComponent,
+    LoginComponent,
+    CallbackComponent,
     PostListComponent,
     PostComponent,
-    SidebarComponent
+    SidebarComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     HttpClientModule,
-    // FormsModule,
     MdModule,
-    SharedModule
+    SharedModule,
+    CoreModule
   ],
-  providers: [ThemingService],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

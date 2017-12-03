@@ -9,12 +9,13 @@ const cors = require('cors');
 const helmet = require('helmet')
 const mongoose = require('mongoose');
 
-const config = require('./configs/database');
+const config = require('./configs/config');
 
 const posts = require('./posts/post.routes');
 const users = require('./users/user.routes');
+const categories = require('./categories/category.routes');
 
-mongoose.connect(config.database, { useMongoClient: true });
+mongoose.connect(config.MONGO_URI, { useMongoClient: true });
 let db = mongoose.connection;
 
 db.once('open', () => {
@@ -43,8 +44,9 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(cors());
 
 
-app.use('/posts', posts);
-app.use('/users', users);
+app.use(config.API_URL + '/posts', posts);
+app.use(config.API_URL + '/users', users);
+app.use(config.API_URL + '/categories', categories);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {

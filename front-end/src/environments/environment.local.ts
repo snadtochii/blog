@@ -7,15 +7,15 @@ const themes = [
 
 const urls = {
   auth: {
-    login: '/api/v0/users/auth',
+    login: 'http://localhost:3000/api/v0/users/auth',
   },
   posts: {
-    categories: '/api/v0/categories'
+    categories: 'http://localhost:3000/api/v0/categories'
   }
 };
 
 export const environment = {
-  production: true,
+  production: false,
   themes: themes,
   api: urls
 };
