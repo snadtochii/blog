@@ -9,10 +9,19 @@ const postSchema = mongoose.Schema({
         type: String,
         required: true
     },
+    preview: {
+        type: String,
+        required: true
+    },
+
     body: {
         type: String,
         required: true
-    }
+    },
+    date: {
+        type: Date,
+        required: true
+    },
 });
 
 const Post = module.exports = mongoose.model('Post', postSchema);
@@ -21,9 +30,9 @@ module.exports.getAllPostsPreview = async () => {
     let posts;
     try {
         posts = await Post.find({});
-        return { success: true, data: { posts: posts } };
+        return { success: true, data: posts };
     } catch (err) {
-        return { success: false, data: { error: err } };
+        return { success: false, data: null, error: err };
     }
 }
 
@@ -32,13 +41,13 @@ module.exports.getPostById = async (id) => {
     try {
         post = await Post.findOne({ _id: id });
     } catch (err) {
-        return { success: false, data: { msg: '', error: err } };
+        return { success: false, data: null, error: err };
     }
     if (post) {
-        return { success: true, data: { post: post } };
+        return { success: true, data: post };
 
     } else {
-        return { success: false, data: { msg: 'post not found' } };
+        return { success: false, data: 'post not found' };
     }
 }
 
@@ -47,9 +56,9 @@ module.exports.addPost = async (newPost) => {
     let post;
     try {
         post = await newPost.save();
-        return { success: true, data: { msg: 'post added' } };
+        return { success: true, data: 'post added' };
     } catch (err) {
-        return { success: false, data: { msg: 'post not added', error: err } };
+        return { success: false, data: null, error: err };
     }
 }
 
@@ -58,13 +67,13 @@ module.exports.updatePost = async (postId, newPost) => {
     try {
         post = await Post.findByIdAndUpdate(postId, { $set: { title: newPost.title, category: newPost.category, body: newPost.body } }, {new: true});
     } catch (err) {
-        return { success: false, data: { msg: 'not updated', error: err } };
+        return { success: false, data: null, error: err };
     }
 
     if (post) {
-        return { success: true, data: { msg: 'updated', post: post } };
+        return { success: true, data: post };
     } else {
-        return { success: false, data: { msg: 'post not found' } };
+        return { success: false, data: 'post not found' };
     }
 }
 
@@ -73,12 +82,12 @@ module.exports.deletePost = async (postId) => {
     try {
         post = await Post.findByIdAndRemove(postId);
     } catch (err) {
-        return { success: false, data: { msg: 'not deleted', error: err } };
+        return { success: false, data: null, error: err };
     }
 
     if (post) {
-        return { success: true, data: { msg: 'deleted', post: post } };
+        return { success: true, data: post };
     } else {
-        return { success: false, data: { msg: 'post not found' } };
+        return { success: false, data: 'post not found' };
     }
 }

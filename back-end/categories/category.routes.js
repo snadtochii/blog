@@ -4,14 +4,17 @@ const router = express.Router();
 const Category = require('./category.model');
 const guards = require('../configs/guards');
 
+// router.use(guards.jwtCheck);
+// router.use(guards.adminCheck)
+
 /* GET all categories. */
-router.get('/', guards.jwtCheck, guards.adminCheck, async (req, res, next) => {
+router.get('/', async (req, res, next) => {
     const result = await Category.getAllCategories();
     res.json(result);
 });
 
 /* GET category by id. */
-router.get('/:id', guards.jwtCheck, guards.adminCheck, async (req, res, next) => {
+router.get('/:id', async (req, res, next) => {
     const categoryId = req.params.id;
 
     const result = await Category.getCategoryById(categoryId);
@@ -19,7 +22,7 @@ router.get('/:id', guards.jwtCheck, guards.adminCheck, async (req, res, next) =>
 });
 
 /* POST new category. */
-router.post('/', guards.jwtCheck, guards.adminCheck, async (req, res, next) => {
+router.post('/', async (req, res, next) => {
     const newCategory = new Category({
         name: req.body.name,
         description: req.body.description
@@ -30,7 +33,7 @@ router.post('/', guards.jwtCheck, guards.adminCheck, async (req, res, next) => {
 });
 
 /* DELETE category. */
-router.delete('/:id', guards.jwtCheck, guards.adminCheck, async (req, res, next) => {
+router.delete('/:id', async (req, res, next) => {
 
     const categoryId = req.params.id;
 

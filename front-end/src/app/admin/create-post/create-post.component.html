@@ -1,18 +1,23 @@
 <mat-card>
-  <form [formGroup]="postForm">
+  <form [formGroup]="postForm" (ngSubmit)="savePost(postForm.value)">
     <mat-form-field color="primary">
       <input matInput placeholder="Введіть заголовок" formControlName="title">
     </mat-form-field>
 
     <mat-form-field color="primary">
-      <mat-select placeholder="Виберіть категорію">
-        <mat-option value="option">Option</mat-option>
+      <mat-select placeholder="Виберіть категорію" formControlName="category">
+        <mat-option *ngFor="let category of categories" [value]="category._id">{{category.name}}</mat-option>
       </mat-select>
     </mat-form-field>
     <a class="link" (click)="openDialog()">Додати категорію</a>
 
     <mat-form-field color="primary">
+      <textarea matInput placeholder="Превью новини" formControlName="preview"></textarea>
+    </mat-form-field>
+
+    <mat-form-field color="primary">
       <textarea matInput placeholder="Текст новини" formControlName="body"></textarea>
     </mat-form-field>
+    <button mat-raised-button color="primary">Створити</button>
   </form>
 </mat-card>

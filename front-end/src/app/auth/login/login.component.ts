@@ -10,20 +10,12 @@ import { Router } from '@angular/router';
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
-export class LoginComponent implements OnInit, OnDestroy {
-
-  private unsubscribe: ReplaySubject<boolean> = new ReplaySubject<boolean>(1);
-  user: Credentials;
+export class LoginComponent implements OnInit {
 
   constructor(private authService: AuthService,
     private router: Router) { }
 
   ngOnInit() {
-  }
-
-  ngOnDestroy() {
-    this.unsubscribe.next(true);
-    this.unsubscribe.complete();
   }
 
   login() {

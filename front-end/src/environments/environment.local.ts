@@ -10,7 +10,8 @@ const urls = {
     login: 'http://localhost:3000/api/v0/users/auth',
   },
   posts: {
-    categories: 'http://localhost:3000/api/v0/categories'
+    categories: 'http://localhost:3000/api/v0/categories',
+    posts: 'http://localhost:3000/api/v0/posts'
   }
 };
 

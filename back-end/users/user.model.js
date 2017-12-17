@@ -24,7 +24,7 @@ module.exports.getUserByUsername = async (username) => {
     try {
         return await User.findOne(query);
     } catch (err) {
-        return { success: false, error: err }
+        return { success: false, data: null, error: err }
     }
 };
 

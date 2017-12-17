@@ -1,4 +1,5 @@
 export class Credentials {
-    constructor(public username,
-                public password) { }
+    constructor(
+        public username,
+        public password) { }
 }

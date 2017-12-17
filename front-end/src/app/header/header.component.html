@@ -2,7 +2,7 @@
   App - Header
 
   <div>
-    <a mat-button routerLink="/login">admin</a>
+    <app-login></app-login>
     <mat-form-field>
       <mat-select [(ngModel)]="selectedTheme" (selectionChange)="changeTheme()">
         <mat-option *ngFor="let theme of themes" [value]="theme">{{theme.name}}</mat-option>

@@ -15,7 +15,8 @@ const urls = {
     login: 'https://aqueous-lowlands-70672.herokuapp.com/api/v0/users/auth',
   },
   posts: {
-    categories: 'https://aqueous-lowlands-70672.herokuapp.com/api/v0/categories'
+    categories: 'https://aqueous-lowlands-70672.herokuapp.com/api/v0/categories',
+    posts: 'https://aqueous-lowlands-70672.herokuapp.com/api/v0/posts'
   }
 };
 

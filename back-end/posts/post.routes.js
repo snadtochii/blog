@@ -4,6 +4,10 @@ const router = express.Router();
 const Post = require('./post.model');
 const guards = require('../configs/guards');
 
+
+// router.use(guards.jwtCheck);
+// router.use(guards.adminCheck)
+
 /* GET all posts preview. */
 router.get('/', async (req, res, next) => {
   const result = await Post.getAllPostsPreview();
@@ -19,12 +23,14 @@ router.get('/:id', async (req, res, next) => {
 });
 
 /* POST new post. */
-router.post('/', guards.jwtCheck, guards.adminCheck, async (req, res, next) => {
+router.post('/', async (req, res, next) => {
 
   const newPost = new Post({
     title: req.body.title,
     category: req.body.category,
-    body: req.body.body
+    preview: req.body.preview,
+    body: req.body.body,
+    date: req.body.date
   });
 
   const result = await Post.addPost(newPost);
@@ -32,7 +38,7 @@ router.post('/', guards.jwtCheck, guards.adminCheck, async (req, res, next) => {
 });
 
 /* PUT the post(update). */
-router.put('/:id', guards.jwtCheck, guards.adminCheck, async (req, res, next) => {
+router.put('/:id', async (req, res, next) => {
   const postId = req.params.id;
 
   const newPost = new Post({
@@ -46,7 +52,7 @@ router.put('/:id', guards.jwtCheck, guards.adminCheck, async (req, res, next) =>
 });
 
 /* DELETE post. */
-router.delete('/:id', guards.jwtCheck, guards.adminCheck, async (req, res, next) => {
+router.delete('/:id', async (req, res, next) => {
 
   const postId = req.params.id;
 

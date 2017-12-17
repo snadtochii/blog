@@ -10,13 +10,13 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
-import { PostListComponent } from './pages/post-list/post-list.component';
-import { PostComponent } from './pages/post/post.component';
+import { PostListComponent } from './main/post-list/post-list.component';
+import { PostComponent } from './main/post/post.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { MdModule } from './shared/md.module';
 import { CoreModule } from './core/core.module';
-import { LoginComponent } from './pages/login/login.component';
-import { CallbackComponent } from './pages/callback/callback.component';
+import { LoginComponent } from './auth/login/login.component';
+import { CallbackComponent } from './auth/callback/callback.component';
 
 @NgModule({
   declarations: [

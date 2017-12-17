@@ -11,6 +11,7 @@ export class CategoryService {
   constructor(private http: HttpClient) { }
 
   getAllCategories() {
+    console.log(this.categoryUrl);
     return this.http.get(this.categoryUrl);
   }
 
