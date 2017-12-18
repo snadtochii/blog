@@ -89,7 +89,7 @@ export class AuthService {
 
   private checkAdmin(profile) {
     const roles = profile[AUTH_CONFIG.NAMESPACE] || [];
-    console.log(roles);
+    console.log(profile, roles, AUTH_CONFIG.NAMESPACE);
     return roles.indexOf('admin') > -1;
   }
 

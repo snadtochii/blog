@@ -1,8 +1,7 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpParams} from '@angular/common/http';
 
 import { environment } from '../../../../environments/environment';
-import { HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs/Observable';
 import { PostModel } from '../../../shared/models';
 import { ResponseModel } from '../../../shared/models';
@@ -10,11 +9,16 @@ import { ResponseModel } from '../../../shared/models';
 @Injectable()
 export class PostsService {
   private postUrl = environment.api.posts.posts;
+  private get authHeader(): string {
+    return `Bearer ${localStorage.getItem('access_token')}`;
+  }
 
   constructor(private http: HttpClient) { }
 
   getPosts(query): Observable<any> {
-    return this.http.get(this.postUrl);
+
+    const headers = new HttpHeaders().set('Authorization', this.authHeader);
+    return this.http.get(this.postUrl, {headers: headers});
   }
 
   getPost(id): Observable<any> {

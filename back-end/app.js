@@ -12,7 +12,6 @@ const mongoose = require('mongoose');
 const config = require('./configs/config');
 
 const posts = require('./posts/post.routes');
-const users = require('./users/user.routes');
 const categories = require('./categories/category.routes');
 
 mongoose.connect(config.MONGO_URI, { useMongoClient: true });
@@ -45,7 +44,6 @@ app.use(cors());
 
 
 app.use(config.API_URL + '/posts', posts);
-app.use(config.API_URL + '/users', users);
 app.use(config.API_URL + '/categories', categories);
 
 // catch 404 and forward to error handler
