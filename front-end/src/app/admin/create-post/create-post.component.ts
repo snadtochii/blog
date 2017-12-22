@@ -16,6 +16,7 @@ export class CreatePostComponent implements OnInit {
 
   postForm: FormGroup;
   categories: CategoryModel[] = [];
+  formData = new FormData();
 
   constructor(
     private formBuilder: FormBuilder,
@@ -29,7 +30,7 @@ export class CreatePostComponent implements OnInit {
       title: [null, Validators.required],
       category: [null, Validators.required],
       preview: [null, Validators.required],
-      body: [null, Validators.required]
+      body: [null, Validators.required],
     });
   }
 
@@ -57,8 +58,17 @@ export class CreatePostComponent implements OnInit {
     });
   }
 
+
+  uploadFile($event) {
+    console.log($event.srcElement.files);
+    this.formData = new FormData();
+    this.formData.append('titleImage', $event.srcElement.files[0]);
+  }
+
   savePost(formValue) {
-    this.postsService.createPost(formValue).takeUntil(this.unsubscribe$).subscribe(res => {
+    formValue['date'] = new Date();
+    this.formData.append('data', JSON.stringify(formValue));
+    this.postsService.createPost(this.formData).takeUntil(this.unsubscribe$).subscribe(res => {
       console.log(res);
     });
   }

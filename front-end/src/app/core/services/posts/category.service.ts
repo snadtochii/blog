@@ -19,7 +19,6 @@ export class CategoryService {
 
   getAllCategories(): Observable<ResponseModel<CategoryModel[]>> {
     const headers = new HttpHeaders().set('Authorization', this.authHeader);
-    console.log(this.authHeader);
     return <Observable<ResponseModel<CategoryModel[]>>>this.http.get(this.categoryUrl, { headers: headers });
   }
 

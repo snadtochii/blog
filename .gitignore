@@ -51,3 +51,4 @@ front-end/src/app/auth/auth.config.ts
 front-end/src/app/core/env.config.ts
 back-end/config/config.js
 back-end/config/guards.js
+.vscode/launch.json

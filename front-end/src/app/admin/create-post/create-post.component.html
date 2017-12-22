@@ -18,6 +18,8 @@
     <mat-form-field color="primary">
       <textarea matInput placeholder="Текст новини" formControlName="body"></textarea>
     </mat-form-field>
+
+    <input type="file" placeholder="Титульне зображення" (change)="uploadFile($event)">
     <button mat-raised-button color="primary">Створити</button>
   </form>
 </mat-card>

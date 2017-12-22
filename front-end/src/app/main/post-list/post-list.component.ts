@@ -18,11 +18,15 @@ export class PostListComponent implements OnInit {
     this.postsService.getPosts(null).takeUntil(this.unsubscribe$).subscribe((res: ResponseModel<any>) => {
       console.log(res);
       if (res.success) {
-        this.posts = res.data;
+        this.posts = res.data.map(el => {
+          if ((typeof(el.titleImage) !== 'string')) {
+            el.titleImage = '';
+          }
+          return el;
+        });
       } else {
         this.posts = [];
       }
     });
   }
-
 }
